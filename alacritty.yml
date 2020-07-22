@@ -39,7 +39,7 @@ window:
 
   # Spread additional padding evenly around the terminal content.
   #dynamic_padding: false
-
+  # Test
   # Window decorations
   #
   # Values for `decorations`:
