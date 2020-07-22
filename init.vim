@@ -135,6 +135,24 @@ function! s:show_documentation()
   endif
 endfunction
 
+
+" fzf.vim
+" -------
+" Shrink the size of the fzf file finder window
+let g:fzf_layout = { 'down': '~20%' }
+let $FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+" Open a fuzzy file finder with C-p and a fuzzy buffer finder with leader-;
+map <C-p> :Files<CR>
+nmap <leader>; :Buffers<CR>
+" Run a Rg search with <leader>s
+noremap <leader>s :Rg 
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+\ <bang>0)
+
 " vim-mucomplete
 " --------------
 " mucomplete says this option is required
@@ -192,3 +210,46 @@ augroup rust | au!
     " Set the text width in Rust files to 80, for comment wrapping.
     au Filetype rust setlocal textwidth=80
 augroup END
+
+" ===============
+" EDITOR SETTINGS
+" ===============
+
+" Text Editing
+" ------------
+" Turn on filetype detection and plugin/indent info loading
+filetype plugin indent on
+" Use 4-space indentation
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+" Auto-indent on new lines
+set autoindent
+" Don't insert two spaces after certain characters when using a join command
+set nojoinspaces
+" Wrap to 100 characters
+set textwidth=100
+" Format options (default fo=jcroql)
+set fo=ca " Auto-wrap comments to textwidth
+set fo+=r " Auto-insert the current comment leader when pressing enter in insert mode
+set fo+=o " Auto-insert the current comment leader when entering new lines with o
+set fo+=q " Allow `gq` to format comments
+set fo+=w " Use a single trailing whitespace character to indicate continuing paragraphs
+set fo+=n " Format numbered lists as well
+set fo+=j " Auto-remove comment characters when joining lines
+" Let me type my own name
+inoremap <M-o> ø
+
+" Text Display
+" ------------
+" Display tab characters with a width of 8 spaces
+set tabstop=8
+" Set the number of lines to keep visible above and below the cursor at the top and bottom of the 
+" screen
+set scrolloff=2
+" Don't soft-wrap long lines to display them in the buffer
+set nowrap
+" Display line numbers in the sidebar
+set number
+" Display line numbers for every line but the current one as an offset
+set relativenumber
