@@ -3,14 +3,14 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-#env:
+env:
   # TERM variable
   #
   # This value is used to set the `$TERM` environment variable for
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  #TERM: alacritty
+  TERM: xterm-256color
 
 window:
   # Window dimensions (changes require restart)
@@ -73,7 +73,7 @@ window:
     #general: Alacritty
 
   # GTK theme variant (Linux/BSD only)
-  #
+  # 
   # Override the variant of the GTK theme. Commonly supported values are `dark` and `light`.
   # Set this to `None` to use the default theme variant.
   #gtk_theme_variant: None
@@ -86,184 +86,55 @@ window:
   # Scrolling distance multiplier.
   #multiplier: 3
 
-# Font configuration
-#font:
-  # Normal (roman) font face
-  #normal:
-    # Font family
-    #
-    # Default:
-    #   - (macOS) Menlo
-    #   - (Linux/BSD) monospace
-    #   - (Windows) Consolas
-    #family: monospace
+# Font
+font:
+  normal:
+    family: JetBrains Mono
+    style: Regular
 
-    # The `style` can be specified to pick a specific face.
-    #style: Regular
+  bold:
+    family: "Meslo LG M for Powerline Regular"
+    style: Bold
 
-  # Bold font face
-  #bold:
-    # Font family
-    #
-    # If the bold family is not specified, it will fall back to the
-    # value specified for the normal font.
-    #family: monospace
+  italic:
+    family: "Meslo LG M for Powerline Regular"
+    style: Italic
 
-    # The `style` can be specified to pick a specific face.
-    #style: Bold
+  bold_italic:
+    family: "Meslo LG M for Powerline Regular"
+    style: Bold Italic
 
-  # Italic font face
-  #italic:
-    # Font family
-    #
-    # If the italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    #family: monospace
+  size: 11
 
-    # The `style` can be specified to pick a specific face.
-    #style: Italic
-
-  # Bold italic font face
-  #bold_italic:
-    # Font family
-    #
-    # If the bold italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    #family: monospace
-
-    # The `style` can be specified to pick a specific face.
-    #style: Bold Italic
-
-  # Point size
-  #size: 11.0
-
-  # Offset is the extra space around each character. `offset.y` can be thought of
-  # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
-  #offset:
-  #  x: 0
-  #  y: 0
-
-  # Glyph offset determines the locations of the glyphs within their cells with
-  # the default being at the bottom. Increasing `x` moves the glyph to the right,
-  # increasing `y` moves the glyph upward.
-  #glyph_offset:
-  #  x: 0
-  #  y: 0
-
-  # Thin stroke font rendering (macOS only)
-  #
-  # Thin strokes are suitable for retina displays, but for non-retina screens
-  # it is recommended to set `use_thin_strokes` to `false`.
-  #use_thin_strokes: true
-
-# If `true`, bold text is drawn using the bright color variants.
-#draw_bold_text_with_bright_colors: false
-
-# Colors (Tomorrow Night)
-#colors:
+# Colors (Solarized Dark)
+colors:
   # Default colors
-  #primary:
-  #  background: '#1d1f21'
-  #  foreground: '#c5c8c6'
-
-    # Bright and dim foreground colors
-    #
-    # The dimmed foreground color is calculated automatically if it is not present.
-    # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
-    # is `false`, the normal foreground color will be used.
-    #dim_foreground: '#828482'
-    #bright_foreground: '#eaeaea'
-
-  # Cursor colors
-  #
-  # Colors which should be used to draw the terminal cursor.
-  #
-  # Allowed values are CellForeground and CellBackground, which reference the
-  # affected cell, or hexadecimal colors like #ff00ff.
-  #cursor:
-  #  text: CellBackground
-  #  cursor: CellForeground
-
-  # Vi mode cursor colors
-  #
-  # Colors for the cursor when the vi mode is active.
-  #
-  # Allowed values are CellForeground and CellBackground, which reference the
-  # affected cell, or hexadecimal colors like #ff00ff.
-  #vi_mode_cursor:
-  #  text: CellBackground
-  #  cursor: CellForeground
-
-  # Selection colors
-  #
-  # Colors which should be used to draw the selection area.
-  #
-  # Allowed values are CellForeground and CellBackground, which reference the
-  # affected cell, or hexadecimal colors like #ff00ff.
-  #selection:
-  #  text: CellBackground
-  #  background: CellForeground
-
-  # Search colors
-  #
-  # Colors used for the search bar and match highlighting.
-  #
-  # Allowed values are CellForeground and CellBackground, which reference the
-  # affected cell, or hexadecimal colors like #ff00ff.
-  #search:
-  #  matches:
-  #    foreground: '#000000'
-  #    background: '#ffffff'
-  #
-  #  bar:
-  #    background: CellForeground
-  #    foreground: CellBackground
+  primary:
+    background: '0x002b36'
+    foreground: '0x839496'
 
   # Normal colors
-  #normal:
-  #  black:   '#1d1f21'
-  #  red:     '#cc6666'
-  #  green:   '#b5bd68'
-  #  yellow:  '#f0c674'
-  #  blue:    '#81a2be'
-  #  magenta: '#b294bb'
-  #  cyan:    '#8abeb7'
-  #  white:   '#c5c8c6'
+  normal:
+    black:   '0x073642'
+    red:     '0xdc322f'
+    green:   '0x859900'
+    yellow:  '0xb58900'
+    blue:    '0x268bd2'
+    magenta: '0xd33682'
+    cyan:    '0x2aa198'
+    white:   '0xeee8d5'
 
   # Bright colors
-  #bright:
-  #  black:   '#666666'
-  #  red:     '#d54e53'
-  #  green:   '#b9ca4a'
-  #  yellow:  '#e7c547'
-  #  blue:    '#7aa6da'
-  #  magenta: '#c397d8'
-  #  cyan:    '#70c0b1'
-  #  white:   '#eaeaea'
+  bright:
+    black:   '0x002b36'
+    red:     '0xcb4b16'
+    green:   '0x586e75'
+    yellow:  '0x657b83'
+    blue:    '0x839496'
+    magenta: '0x6c71c4'
+    cyan:    '0x93a1a1'
+    white:   '0xfdf6e3'
 
-  # Dim colors
-  #
-  # If the dim colors are not set, they will be calculated automatically based
-  # on the `normal` colors.
-  #dim:
-  #  black:   '#131415'
-  #  red:     '#864343'
-  #  green:   '#777c44'
-  #  yellow:  '#9e824c'
-  #  blue:    '#556a7d'
-  #  magenta: '#75617b'
-  #  cyan:    '#5b7d78'
-  #  white:   '#828482'
-
-  # Indexed Colors
-  #
-  # The indexed colors include all colors from 16 to 256.
-  # When these are not set, they're filled with sensible defaults.
-  #
-  # Example:
-  #   `- { index: 16, color: '#ff00ff' }`
-  #
-  #indexed_colors: []
 
 # Bell
 #
@@ -358,10 +229,10 @@ background_opacity: 0.9
 #   - (macOS) /bin/bash --login
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
-#shell:
-#  program: /bin/zsh
-#  args:
-#    - --login
+shell:
+  program: /bin/zsh
+  args:
+    - --login
 #    - -c
 #    - "echo 'attaching to session main';"
 

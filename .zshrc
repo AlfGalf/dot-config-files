@@ -8,7 +8,7 @@ export ZSH="/Users/alfierichards/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -81,9 +81,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+  export EDITOR='nvim'
 else
-  export EDITOR='mvim'
+  export EDITOR='nvim'
 fi
 
 # Compilation flags
@@ -97,3 +97,11 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+prompt_context(){}
+
+# Run tmux automatically on zsh lunch
+if [ "$TMUX" = "" ]; then tmux; fi
+
+export CONFIGFILES='/Users/alfierichards/Documents/GitRepos/ConfigFiles/'
+

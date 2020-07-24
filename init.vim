@@ -52,6 +52,7 @@ Plug 'cespare/vim-toml'
 Plug 'lervag/vimtex'
 Plug 'dag/vim-fish'
 Plug 'plasticboy/vim-markdown'
+
 " Other languages
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
@@ -64,6 +65,7 @@ Plug 'keith/swift.vim'
 Plug 'derekwyatt/vim-scala'
 Plug 'elmcast/elm-vim'
 Plug 'gleam-lang/gleam.vim'
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 " Extra tools
 Plug 'godlygeek/tabular'
 Plug 'rhysd/vim-clang-format'
@@ -219,6 +221,8 @@ augroup END
 " ------------
 " Turn on filetype detection and plugin/indent info loading
 filetype plugin indent on
+" set tabs to have 4 spaces
+set ts=4
 " Use 4-space indentation
 set shiftwidth=4
 set softtabstop=4
@@ -242,8 +246,6 @@ inoremap <M-o> ø
 
 " Text Display
 " ------------
-" Display tab characters with a width of 8 spaces
-set tabstop=8
 " Set the number of lines to keep visible above and below the cursor at the top and bottom of the 
 " screen
 set scrolloff=2
