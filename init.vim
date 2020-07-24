@@ -49,22 +49,13 @@ Plug 'lifepillar/vim-mucomplete'
 " Languages under active use
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
-Plug 'lervag/vimtex'
-Plug 'dag/vim-fish'
 Plug 'plasticboy/vim-markdown'
 
 " Other languages
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'vmchale/ion-vim'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'uarun/vim-protobuf'
-Plug 'jparise/vim-graphql'
-Plug 'unisonweb/unison', { 'rtp': 'editor-support/vim' }
 Plug 'keith/swift.vim'
-Plug 'derekwyatt/vim-scala'
-Plug 'elmcast/elm-vim'
-Plug 'gleam-lang/gleam.vim'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 " Extra tools
 Plug 'godlygeek/tabular'
@@ -186,22 +177,6 @@ let g:mucomplete#chains = {
 let g:rustfmt_command = 'rustup run nightly rustfmt'
 let g:rustfmt_autosave = 1
 
-" vimtex
-" ------
-" Explicitly specify that TeX is always really LaTeX
-let g:tex_flavor = 'latex'
-" Set the leader key for insert-mode bindings
-let g:vimtex_imaps_leader = ';'
-
-" vim-markdown
-" ------------
-" Disable automatic folding of sections in Markdown files
-let g:vim_markdown_folding_disabled = 1
-
-" vim-clang-format
-" ----------------
-let g:clang_format#code_style = 'llvm'
-
 " =================
 " LANGUAGE SETTINGS
 " =================
@@ -241,8 +216,6 @@ set fo+=q " Allow `gq` to format comments
 set fo+=w " Use a single trailing whitespace character to indicate continuing paragraphs
 set fo+=n " Format numbered lists as well
 set fo+=j " Auto-remove comment characters when joining lines
-" Let me type my own name
-inoremap <M-o> ø
 
 " Text Display
 " ------------

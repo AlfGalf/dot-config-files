@@ -3,6 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/alfierichards/.oh-my-zsh"
+export PATH=$PATH:/opt/apache-maven/bin
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -58,7 +59,7 @@ ZSH_THEME="agnoster"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+ HIST_STAMPS="dd/mm/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -77,7 +78,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+ export LANG=en_UK.UTF-8
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -101,7 +102,7 @@ fi
 prompt_context(){}
 
 # Run tmux automatically on zsh lunch
-if [ "$TMUX" = "" ]; then tmux; fi
+if [ "$TMUX" = "" ]; then tmux attach -t TMUX || tmux new -s TMUX; fi
 
 export CONFIGFILES='/Users/alfierichards/Documents/GitRepos/ConfigFiles/'
 
