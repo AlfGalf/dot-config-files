@@ -191,6 +191,7 @@ augroup END
 " ===============
 " EDITOR SETTINGS
 " ===============
+set statusline^=%{coc#status()}
 
 " Text Editing
 " ------------
