@@ -33,12 +33,12 @@ window:
   #
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
-  # padding:
-     x: 10 
-     y: 10
+    padding:
+        x: 10 
+        y: 10
 
   # Spread additional padding evenly around the terminal content.
-  #dynamic_padding: false
+    dynamic_padding: true 
   # Test
   # Window decorations
   #
@@ -49,7 +49,7 @@ window:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background, but no title bar buttons
-     decorations: full 
+    decorations: full
 
   # Startup Mode (changes require restart)
   #
@@ -60,10 +60,10 @@ window:
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-     startup_mode: Fullscreen 
+    startup_mode: Fullscreen
 
   # Window title
-     title: Alacritty
+    title: Alacritty
 
   # Window class (Linux/BSD only):
   #class:
@@ -77,11 +77,14 @@ window:
   # Override the variant of the GTK theme. Commonly supported values are `dark` and `light`.
   # Set this to `None` to use the default theme variant.
   #gtk_theme_variant: None
+  
+    # Allow terminal applications to change Alacritty's window title.
+    dynamic_title: true
 
-#scrolling:
+scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
-  #history: 10000
+  history: 0
 
   # Scrolling distance multiplier.
   #multiplier: 3
@@ -93,18 +96,47 @@ font:
     style: Regular
 
   bold:
-    family: "Meslo LG M for Powerline Regular"
+    family: JetBrains Mono
     style: Bold
 
   italic:
-    family: "Meslo LG M for Powerline Regular"
+    family: JetBrains Mono
     style: Italic
 
   bold_italic:
-    family: "Meslo LG M for Powerline Regular"
+    family: JetBrains Mono
     style: Bold Italic
 
   size: 11
+
+## Colors (Solarized Light)
+#colors:
+#  # Default colors
+#  primary:
+#    background: '0xfdf6e3'
+#    foreground: '0x586e75'
+#
+#  # Normal colors
+#  normal:
+#    black:   '0x073642'
+#    red:     '0xdc322f'
+#    green:   '0x859900'
+#    yellow:  '0xb58900'
+#    blue:    '0x268bd2'
+#    magenta: '0xd33682'
+#    cyan:    '0x2aa198'
+#    white:   '0xeee8d5'
+#
+#  # Bright colors
+#  bright:
+#    black:   '0x002b36'
+#    red:     '0xcb4b16'
+#    green:   '0x586e75'
+#    yellow:  '0x657b83'
+#    blue:    '0x839496'
+#    magenta: '0x6c71c4'
+#    cyan:    '0x93a1a1'
+#    white:   '0xfdf6e3'
 
 # Colors (Solarized Dark)
 colors:
@@ -135,9 +167,7 @@ colors:
     cyan:    '0x93a1a1'
     white:   '0xfdf6e3'
 
-
 # Bell
-#
 # The bell is rung every time the BEL control character is received.
 #bell:
   # Visual Bell Animation
@@ -181,7 +211,7 @@ colors:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.9
+# background_opacity: 0.9
 
 #selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
@@ -189,17 +219,15 @@ background_opacity: 0.9
   # When set to `true`, selected text will be copied to the primary clipboard.
   #save_to_clipboard: false
 
-# Allow terminal applications to change Alacritty's window title.
-#dynamic_title: true
 
-#cursor:
+cursor:
   # Cursor style
   #
   # Values for `style`:
   #   - ▇ Block
   #   - _ Underline
   #   - | Beam
-  #style: Block
+  style: Block
 
   # Vi mode cursor style
   #
@@ -211,7 +239,7 @@ background_opacity: 0.9
 
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.
-  #unfocused_hollow: true
+  unfocused_hollow: true
 
   # Thickness of the cursor relative to the cell width as floating point number
   # from `0.0` to `1.0`.

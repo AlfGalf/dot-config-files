@@ -57,6 +57,9 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'vmchale/ion-vim'
 Plug 'keith/swift.vim'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+Plug 'lervag/vimtex'
+Plug 'Konfekt/FastFold'
+Plug 'matze/vim-tex-fold'
 " Extra tools
 Plug 'godlygeek/tabular'
 Plug 'rhysd/vim-clang-format'
@@ -128,6 +131,7 @@ function! s:show_documentation()
   endif
 endfunction
 
+let g:tex_flavor = 'latex'
 
 " fzf.vim
 " -------

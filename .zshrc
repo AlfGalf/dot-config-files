@@ -3,35 +3,27 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/alfierichards/.oh-my-zsh"
+
+# Add amven to path
 export PATH=$PATH:/opt/apache-maven/bin
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# Oh my ZSH theme
 ZSH_THEME="agnoster"
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
- HIST_STAMPS="dd/mm/yyyy"
+# Use a sansible date format...
+HIST_STAMPS="dd/mm/yyyy"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git command-not-found autojump auto-color-ls zsh-syntax-highlighting)
 
 # Add oh-my-zsh 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
  export LANG=en_UK.UTF-8
@@ -55,4 +47,7 @@ bindkey -v
 
 # Alias for NOT using rm unless I really mean to
 alias rm="echo Don't use rm! Use rmtrash instead (or /bin/rm)"
+
+# Color ls alias
+alias lsc='colorls -lA --sd'
 
